@@ -1,4 +1,4 @@
-1.  Scala有多cool
+1.Scala有多cool
 
 “Put productivity & creativity back in the hands of developers”
 
