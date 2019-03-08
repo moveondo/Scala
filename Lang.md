@@ -235,6 +235,7 @@ val b = 10.isInstanceOf[Int] // true
 
 用Any统一了原生类型和引用类型。
 
+![](https://github.com/moveondo/Scala/blob/master/image/2.jpg)
 
 
  
@@ -946,7 +947,7 @@ if (x>y) 100 else -1
 
 2.16.    循环操作
 
-![](https://github.com/moveondo/Scala/blob/master/image/6.jpg)
+![](https://github.com/moveondo/Scala/blob/master/image/5.jpg)
 
  
 
