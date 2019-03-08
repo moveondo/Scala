@@ -5,13 +5,6 @@
 2.1.1.  语法
 
 ![](https://github.com/moveondo/Scala/blob/master/image/1.jpg)
-
-注：
-
-existential type——和Java互操作时进行对应
-
-Iterator<? extends Component>  -->  Iterator[T] { type T <: Component }或者Iterator[_]
-
  
 
 2.1.2.  库
