@@ -1,13 +1,13 @@
-2.   lang
+###  2.   lang
 
-2.1.     和Java的异同
+#### 2.1.     和Java的异同
 
-2.1.1.  语法
+#### 2.1.1.  语法
 
 ![](https://github.com/moveondo/Scala/blob/master/image/1.jpg)
  
 
-2.1.2.  库
+#### 2.1.2.  库
 
 以下功能通过库的形式提供：
 
@@ -37,9 +37,9 @@ try { println(f.readLine) } finally { if (f!=null) f.close }
 
 l  query
 
-2.2.     变量
+#### 2.2.     变量
 
-2.2.1.  保留字
+#### 2.2.1.  保留字
 
 abstract   case       catch      class      def
 
@@ -69,7 +69,7 @@ Scala调用Java的方法时，会碰到有Scala的保留字，如Thread.yield()
 
 注意：没有break和continue
 
-2.2.2.  变量标识
+#### 2.2.2.  变量标识
 
 这些标识在Java中是非法的，在Scala中是合法的，可以当作函数名使用，使接口更加DSL：
 
@@ -81,9 +81,9 @@ val `yield` = 10
 
 val ** = "power"
 
-2.2.3.  变量定义
+#### 2.2.3.  变量定义
 
-2.2.3.1     val, var
+#### 2.2.3.1     val, var
 
 var 可变，可重新赋值，赋值为"_"表示缺省值(0, false, null)，例如：
 
@@ -104,7 +104,7 @@ val pi = 3.f // 相当于3.0f
 
 提示：向函数式风格推进的一个方式，就是尝试不用任何var来定义变量。
 
-2.2.3.2     花样定义
+#### 2.2.3.2     花样定义
 
 和Python一样方便的赋值方式：
 
@@ -142,7 +142,7 @@ val regex(year, month, day) = "2010/1/13"
 
 // day: String = 13
 
-2.2.3.3     lazy, val, def的区别
+#### 2.2.3.3     lazy, val, def的区别
 
 val
 
@@ -204,7 +204,7 @@ scala> f3
 
 res99: Long = 1279682785352 // 每次求值
 
-2.3.     基本类型
+#### 2.3.     基本类型
 
 尽量使用大写形式： Int, Long, Double, Byte, Short, Char, Float, Double, Boolean
 
@@ -233,7 +233,7 @@ val b = 10.isInstanceOf[Int] // true
 
  
 
-2.3.1.  Int
+#### 2.3.1.  Int
 
 -3 abs // 3
 
@@ -267,7 +267,7 @@ def even(n:Int) = 0==(n & 1)
 
 def odd(n:Int) = !even(n)
 
-2.3.2.  Char
+#### 2.3.2.  Char
 
 String可以转化为List[Char]
 
@@ -281,7 +281,7 @@ String可以转化为List[Char]
 
 ('a' to 'f') map (_.toString*3) // (aaa, bbb, ccc, ddd, eee, fff)
 
-2.4.     BigInt
+#### 2.4.     BigInt
 
 可以表示很大的整数：
 
@@ -337,7 +337,7 @@ scala中，字符串除了可以+，也可以*
 
 "Hello" map (_.toUpper) // 相当于 "Hello".toUpperCase
 
-2.5.1.  类型转换
+#### 2.5.1.  类型转换
 
 "101".toInt // 101，无需 Integer.parseInt("101");
 
@@ -368,7 +368,7 @@ sb.toString // "Hello"
 
 sb clear // StringBuilder()
 
-2.5.3.  文本格式化
+#### 2.5.3.  文本格式化
 
 使用java.text.MessageFormat.format:
 
@@ -396,7 +396,7 @@ At 17:50:34 on 2010-7-20, there was a disturbance in the Force on planet Hoth.
 
  
 
-2.6.     Null, None, Nil, Nothing
+#### 2.6.     Null, None, Nil, Nothing
 
 Null
 
@@ -420,7 +420,7 @@ Nil
 
  
 
-2.7.     ==和eq
+#### 2.7.     ==和eq
 
 Scala的==很智能，他知道对于数值类型要调用Java中的==，ref类型要调用Java的equals()
 
@@ -453,9 +453,9 @@ s1==s3 // true 值相同
 
 s1 eq s3 // false 不是同一个引用
 
-2.8.     Option[T]
+#### 2.8.     Option[T]
 
-2.8.1.  概念
+#### 2.8.1.  概念
 
 l  Option[T]可以是任意类型或者空，但一旦声明类型就不能改变；
 
@@ -467,7 +467,7 @@ l  Option实现了map, flatMap, and filter 接口，允许在 'for'循环里使�
 
  
 
-2.8.2.  使用
+#### 2.8.2.  使用
 
 Some(3).getOrElse(4) // 3
 
@@ -491,7 +491,7 @@ p(Map(1->100,3->300)) // 300
 
  
 
-2.8.3.  例子
+#### 2.8.3.  例子
 
 例子1：
 
@@ -553,15 +553,15 @@ List("123", "12a", "45") map toint // List(Some(123), None, Some(45))
 
  
 
-2.9.     区分<-,=>,->
+#### 2.9.     区分<-,=>,->
 
 ![](https://github.com/moveondo/Scala/blob/master/image/4.jpg)
 
  
 
-2.10.    match..case(switch)
+#### 2.10.    match..case(switch)
 
-2.10.1.      和switch..case的区别
+#### 2.10.1.      和switch..case的区别
 
 Java里面的写法：
 
@@ -593,7 +593,7 @@ n match {
 
  
 
-2.10.2.      匹配数据类型
+#### 2.10.2.      匹配数据类型
 
 match 可以很简单地匹配数据类型（不需要isInstanceOf[T]）：
 
@@ -623,7 +623,7 @@ f(3.14) // "others"
 
 注意：自定义类型如果也要匹配，需要用case class
 
-2.10.3.      命令行参数解析例子
+#### 2.10.3.      命令行参数解析例子
 
 /** Basic command line parsing. */
 
@@ -646,7 +646,7 @@ object Main {
 }
 ```
 
-2.10.4.      使用case的递归函数
+#### 2.10.4.      使用case的递归函数
 
 写法1：
 
@@ -698,7 +698,7 @@ implicit def foo(n:Int) = new { def ! = fac(n) }
   
   fac(5) // 120
   
-2.10.5.      变量匹配
+#### 2.10.5.      变量匹配
 
 常量匹配很简单，即case后跟的都是常量；
 
@@ -724,7 +724,7 @@ val a = 10
         
         20 match { case A => 1; case b => -1 } // -1，大写A是变量10
  
-2.10.6.      case..if条件匹配
+#### 2.10.6.      case..if条件匹配
 
 写法1：
 
@@ -754,7 +754,7 @@ val a = 10
 })
 ```
 
-2.11.    try..catch..finally
+#### 2.11.    try..catch..finally
 
 var f = openFile()
 
@@ -774,7 +774,7 @@ try {
 
 }
 
-2.12.    require
+#### 2.12.    require
 
 def f(n:Int) = { require(n!=0); 1.0/n }
 
@@ -786,7 +786,7 @@ f(0)
 
  
 
-2.13.    main方法
+#### 2.13.    main方法
 
 Scala的main方法(包括所有类似java的static方法)必须定义在一个object内：
 
@@ -818,7 +818,7 @@ java -cp e:\scala\lib\scala-library.jar Test1 // 方式3，快
 
 scala -encoding gbk test.scala
 
-2.13.1.      Application
+#### 2.13.1.      Application
 
 不带命令行参数的简化main方法：
 
@@ -828,9 +828,9 @@ object app1 extends Application {
 
 }
 
-2.14.    package, import
+#### 2.14.    package, import
 
-2.14.1.      import
+#### 2.14.1.      import
 
 Scala的import可以只在局部作用域内生效；
 
@@ -858,7 +858,7 @@ l  scala.Predef
 
 import _root_.java.lang.Long
 
-2.14.2.      package
+#### 2.14.2.      package
 
 package com.wr3 { // C# 和Ruby的方式，也可以改用Java的方式
 
@@ -898,7 +898,7 @@ scala com.wr3.o1 // 方式2
 
  
 
-2.14.3.      包对象
+#### 2.14.3.      包对象
 
 Scala2.8+支持包对象（package object），除了和2.8之前一样可以有下级的object和class，还可以直接有下级变量和函数，例如：
 
@@ -928,7 +928,7 @@ $fsc foo.scala 命令产生如下class：
 
 scala p0.p1.package
 
-2.15.    if..else
+#### 2.15.    if..else
 
 没有java的：
 
@@ -938,7 +938,7 @@ b = (x>y) ? 100 : -1
 
 if (x>y) 100 else -1
 
-2.16.    循环操作
+#### 2.16.    循环操作
 
 ![](https://github.com/moveondo/Scala/blob/master/image/5.jpg)
 
@@ -1008,7 +1008,7 @@ def triangle(n: Int) = for {
 
  
 
-2.16.1.    for .. yield
+#### 2.16.1.    for .. yield
 
 把每次循环的结果“移”进一个集合（类型和循环内的一致）
 
@@ -1030,7 +1030,7 @@ for (e<-List(1,2,3)) { yield e*e } // 语法错误,yield不能在任何括号内
 
  
 
-2.16.2.      foreach
+#### 2.16.2.      foreach
 
 List(1,2,3).foreach(println)
 
@@ -1073,7 +1073,7 @@ l  也可以是BigInt
 
 (1:BigInt) to 3
 
-2.16.3.      forall
+#### 2.16.3.      forall
 
 "所有都符合"——相当于 A1 && A2 && A3 && ... && Ai && ... && An
 
@@ -1099,7 +1099,7 @@ for (i<-1 to 100 if isPrime(i)) println(i)
 
  
 
-2.16.4.      reduceLeft
+#### 2.16.4.      reduceLeft
 
 reduceLeft 方法首先应用于前两个元素，然后再应用于第一次应用的结果和接下去的一个元素，等等，直至整个列表。例如
 
@@ -1133,7 +1133,7 @@ List(1,4,9,6,7).reduceLeft(_ max _) // 9
 
     ((((1 max 4) max 9) max 6) max 7)
 
-2.16.5.      foldLeft scanLeft
+#### 2.16.5.      foldLeft scanLeft
  
 
 累加或累乘
@@ -1174,7 +1174,7 @@ multiply(1 until 5+1) // 120
 
  
 
-2.16.6.      scanLeft
+#### 2.16.6.      scanLeft
 
 List(1,2,3,4,5).scanLeft(0)(_+_) // (0,1,3,6,10,15)
 
@@ -1202,7 +1202,7 @@ l  (List(a, b, c) :\ z) (op) equals op(a, op(b, op(c, z)))
 
  
 
-2.16.7.      take drop splitAt
+#### 2.16.7.      take drop splitAt
 
 1 to 10 by 2 take 3 // Range(1, 3, 5)
 
@@ -1218,7 +1218,7 @@ def prime(n:Int) = (! ((2 to math.sqrt(n).toInt) exists (i=> n%i==0)))
 
 2 to 100 filter prime take 10
 
-2.16.8.      takeWhile, dropWhile, span
+#### 2.16.8.      takeWhile, dropWhile, span
 
 while语句的缩写，
 
@@ -1270,7 +1270,7 @@ List(1,0,1,0) span (_>0) // ((1), (0,1,0))
 
 List(1,0,1,0) partition (_>0) // ((1,1),(0,0))
 
-2.16.9.      break、continue
+#### 2.16.9.      break、continue
 
 Scala中没有break和continue语法！需要break得加辅助boolean变量，或者用库（continue没有）.
 
@@ -1302,7 +1302,7 @@ for(e<-1 to 10) { val e2 = e*e; if (e2>10) break; println(e) }
 
  
 
-2.17.    操作符重载
+#### 2.17.    操作符重载
 
 注意：其实Scala没有操作符，更谈不上操作符重载；+-/*都是方法名，如1+2其实是(1).+(2)
 
@@ -1338,13 +1338,13 @@ object operator {
 
  
 
-2.18.    系统定义scala._
+#### 2.18.    系统定义scala._
 
 ![](https://github.com/moveondo/Scala/blob/master/image/6.jpg)
 
  
 
-2.19.    implicit隐式转换
+#### 2.19.    implicit隐式转换
 
 用途：
 
@@ -1352,7 +1352,7 @@ l  把一种object类型安全地自动转换成另一种object类型;
 
 l  不改动已有class设计即可添加新的方法;
 
-2.19.1.      类型转换
+#### 2.19.1.      类型转换
 
 implicit def foo(s:String):Int = Integer.parseInt(s) // 需要时把String->Int
 
@@ -1360,7 +1360,7 @@ def add(a:Int, b:Int) = a+b
 
 add("100",8) // 108, 先把"100"隐式转换为100
 
-2.19.2.      例子：阶乘n!
+#### 2.19.2.      例子：阶乘n!
 
 第一步：写函数
 
@@ -1394,7 +1394,7 @@ println(10!)
 
  
 
-2.19.3.      例子：cout
+#### 2.19.3.      例子：cout
 
 ```
 import java.io._
@@ -1421,7 +1421,7 @@ System.out<<"hello"<<" world"<<endl
 
 ```
 
-2.19.4.      例子：定义?:
+#### 2.19.4.      例子：定义?:
 
 
 ```
@@ -1441,7 +1441,7 @@ null ?: "" // ""
 
 ```
 
-2.19.5.      已有Object加新方法
+#### 2.19.5.      已有Object加新方法
 
 
 ```
@@ -1498,7 +1498,7 @@ implicit def foo(n:Int) = new { def next = n+1 }
 
  
 
-2.20.    type做alias
+#### 2.20.    type做alias
 
 相当于C语言的类型定义typedef，建立新的数据类型名（别名）；在一个函数中用到同名类时可以起不同的别名
 
@@ -1517,9 +1517,9 @@ val d2 = new SDate()  // 相当于 val d = new java.sql.Date()
 注意：type也可以做泛型
 
 
-2.21.    泛型
+#### 2.21.    泛型
 
-2.21.1.      函数中的泛型：
+#### 2.21.1.      函数中的泛型：
 
 def foo[T](a:T) = println("value is " + a)
 
@@ -1531,7 +1531,7 @@ foo("hello") // "value is hello"
 
  
 
-2.21.2.      类中的泛型：
+#### 2.21.2.      类中的泛型：
 
 class C1[T] {
 
@@ -1547,7 +1547,7 @@ new C1[Int].set(10).get // 10
 
 new C1[String].set("hello").get // "hello"
 
-2.21.3.      泛型qsort例子
+#### 2.21.3.      泛型qsort例子
 
 def qsort[T <% Ordered[T]](a:List[T]): List[T] = if (a.size<=1) a else {
 
@@ -1577,7 +1577,7 @@ List(1.0, 3.3, 6.2, 6.3, 0, 9.5, 8.7, 7.3, 2.2).sortWith(_<_)
 
  
 
-2.21.4.      泛型add例子
+#### 2.21.4.      泛型add例子
 
 // 采用implicit parameters
 
@@ -1605,7 +1605,7 @@ def max2[T](x:T, y:T)(implicit n:Numeric[T]) = {
 
 max2(2, 3.14) // 3.14
 
-2.21.5.      泛型定义type
+#### 2.21.5.      泛型定义type
 
 
 ```
@@ -1661,7 +1661,7 @@ Console println m2(List(1,2,3,4,5)).len // 5
 
  
 
-2.21.6.      @specialized
+#### 2.21.6.      @specialized
 
 def test[@specialized(Int,Double) T](x:T)  = x match { case i:Int => "int"; case _ => "other" }
 
@@ -1669,7 +1669,7 @@ def test[@specialized(Int,Double) T](x:T)  = x match { case i:Int => "int"; case
 
 编译后的文件尺寸扩充了，但性能也强了，不用box，unbox了
 
-2.22.    枚举Enum
+#### 2.22.    枚举Enum
 
 Scala没有在语言层面定义Enumeration，而是在库中实现：
 
