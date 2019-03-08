@@ -4,7 +4,7 @@
 
 2.1.1.  语法
 
-1.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/1.jpg)
 
 注：
 
@@ -469,7 +469,8 @@ l  Option[T]可完美替代Java中的null，可以是Some[T]或者None；
 
 l  Option实现了map, flatMap, and filter 接口，允许在 'for'循环里使用它；
 
- 3.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/3.jpg)
+
  
 
 2.8.2.  使用
@@ -560,7 +561,8 @@ List("123", "12a", "45") map toint // List(Some(123), None, Some(45))
 
 2.9.     区分<-,=>,->
 
-4.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/4.jpg)
+
  
 
 2.10.    match..case(switch)
@@ -944,7 +946,8 @@ if (x>y) 100 else -1
 
 2.16.    循环操作
 
-6.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/6.jpg)
+
  
 
 2.16.1.      for
@@ -1343,7 +1346,8 @@ object operator {
 
 2.18.    系统定义scala._
 
-6.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/6.jpg)
+
  
 
 2.19.    implicit隐式转换
