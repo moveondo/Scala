@@ -9,19 +9,23 @@ http://www.scala-lang.org/docu/files/collections-api/collections.html
 
 scala.collection.immutable
 
-51.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/51.jpg)
+
 
 scala.collection.mutable
 
-52.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/52.jpg)
 
- 
-53.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/53.jpg)
+
  
 
 5.2.     集合Array,List,Tuple
 
-54.jpg
+
+![](https://github.com/moveondo/Scala/blob/master/image/54.jpg)
+
+
 
 Scala 2.8中，3者的元素都可以混合不同的类型（转化为Any类型）；
 
@@ -669,11 +673,13 @@ scalaj的简易文档如下：
 
 // Java to Scala
 
-55.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/55.jpg)
+
 
 // Scala to Java
 
-56.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/56.jpg)
+
  
 
 5.3.     Map
