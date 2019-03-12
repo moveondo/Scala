@@ -102,14 +102,14 @@
     5.6.  Paralllel collection
 
 
-[6.io](https://github.com/moveondo/Scala/blob/master/scala%E6%9C%89%E5%A4%9Acool.md) 
+[6.io](https://github.com/moveondo/Scala/blob/master/IO.md) 
 
 
     6.1. 文件I/O
     
     6.2.  网络I/O
 
-[7.  actor](https://github.com/moveondo/Scala/blob/master/scala%E6%9C%89%E5%A4%9Acool.md) 
+[7.  actor](https://github.com/moveondo/Scala/blob/master/actor.md) 
 
 
     7.1. actor模型
@@ -130,7 +130,7 @@
     
     7.9. STM
 
-[8. misc](https://github.com/moveondo/Scala/blob/master/scala%E6%9C%89%E5%A4%9Acool.md) 
+[8. misc](https://github.com/moveondo/Scala/blob/master/misc.md) 
 
     8.1. xml
     
@@ -143,7 +143,7 @@
     8.5. GUI
 
 
-[9. 附录](https://github.com/moveondo/Scala/blob/master/scala%E6%9C%89%E5%A4%9Acool.md) 
+[9. 附录](https://github.com/moveondo/Scala/blob/master/%E9%99%84%E5%BD%95.mdd) 
 
 
     9.1.  stackoverflow的scala教程
