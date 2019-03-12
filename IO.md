@@ -1,8 +1,8 @@
-6.   io
+### 6.   io
 
-6.1.     文件I/O
+### 6.1.     文件I/O
 
-6.1.1.  读文件
+### 6.1.1.  读文件
 
 scala特有的是scala.io.Source，例如：
 
@@ -16,7 +16,7 @@ Source.fromFile("cn.scala","utf8").mkString
 Source.fromFile(new java.io.File("cn.scala")).getLines().foreach(println)
 
 
-6.1.2.  写文件
+### 6.1.2.  写文件
 
 直接调用java的io：
 
@@ -41,7 +41,7 @@ out close
 
  
 
-6.1.3.  复制文件
+### 6.1.3.  复制文件
 
 直接调用java的io：
 
@@ -52,7 +52,7 @@ val out = new FileOutputStream("out").getChannel
 in transferTo (0, in.size, out)
 
 
-6.1.4.  全目录扫描
+### 6.1.4.  全目录扫描
 
 递归使用listFiles：
 
@@ -93,7 +93,7 @@ def child = new Iterable[File] {
   for (f<-list) println(f)
 
 
-6.2.     网络I/O
+### 6.2.     网络I/O
 
 import java.net.{URL, URLEncoder}
 
