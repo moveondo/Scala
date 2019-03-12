@@ -1,4 +1,4 @@
-7.   actor
+## 7.   actor
 
 http://www.scala-lang.org/docu/files/actors-api/actors_api_guide.html#
 
@@ -13,20 +13,18 @@ Scala中处理并发，有很多选择：
 
 *  3rd并发框架如Netty，Mina
 
-7.1.     actor模型
+### 7.1.     actor模型
 
-71.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/71.jpg)
 
-
-7.2.     多核计算
+### 7.2.     多核计算
 
 对比如下的算法：
 
 
-72.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/72.jpg)
 
 上面是Java的写法，也可以用Scala的actor写法：
-
 
 Scala写法1：
 
@@ -56,7 +54,7 @@ n to n+10 foreach (i=> actor { react { case n:Int=>println(perfect(n)) }} ! i)
 ```
  
 
-7.3.     Actor用法
+### 7.3.     Actor用法
 
 Scala会建立一个线程池共所有Actor来使用。receive模型是Actor从池中取一个线程一直使用；react模型是Actor从池中取一个线程用完给其他Actor用
 
@@ -90,9 +88,10 @@ val a2 = actor { react { case _ =>println("ok") } } // 马上启动
 a2 ! "message" // 不必调用start
 
  
-73.jpg
+![](https://github.com/moveondo/Scala/blob/master/image/73.jpg)
 
-7.4.     方式1：接受receive
+
+### 7.4.     方式1：接受receive
 
 特点：要反复处理消息，receive外层用while(..)
 ```
@@ -125,7 +124,7 @@ a1 ! -1 // "a1 stop: -1"
 
 a1 ! "no response :("
 
-7.5.     方式2：接受react, loop
+### 7.5.     方式2：接受react, loop
 
 特点：
 
@@ -182,7 +181,7 @@ case x:Int => println("a1 stop: " + x); exit()
 
 ```
 
-7.6.     REPL接受消息
+### 7.6.     REPL接受消息
 
 ```
 scala> self ! "hello"
@@ -193,9 +192,9 @@ scala> self.receiveWithin(1000) { case x => x }
 
 ```
 
-7.7.     actor最佳实践
+### 7.7.     actor最佳实践
 
-7.7.1.  不阻塞actor
+### 7.7.1.  不阻塞actor
 
 actor不应由于处理某条消息而阻塞，可以调用helper-actor处理耗时操作(helper actor虽然是阻塞的，但由于不接受消息所以没问题)，以便actor接着处理下一条消息
 
@@ -242,7 +241,7 @@ val time = 1000
 ```
 -----------------------------------------
 
-7.7.2.  actor之间用且仅用消息来通讯
+### 7.7.2.  actor之间用且仅用消息来通讯
 
 actor模型让我们写多线程程序时只用关注各个独立的单线程程序（actor），他们之间通过消息来通讯。例如，如果BadActor中有一个GoodActor的引用:
 
@@ -250,7 +249,7 @@ class BadActor(a:GoodActor) extends Actor {...}
 
 那在BadActor中即可以通过该引用来直接调用GoodActor的方法，也可以通过“!”来传递消息。选择后者！因为一旦BadActor通过引用读取GoodActor实例的私有数据，而这些数据可能正被其他线程改写值，结果就避免不了“共享数据-锁”模型中的麻烦事：即必须保证BadActor线程读取GoodActor的私有数据时，GoodActor线程在这块成为“共享数据”的操作上加锁。GoodActor只要有了共享数据，就必须来加锁防范竞用冲突和死锁，你又得从actor模型退回到“共享数据-锁”模型（注：actor对消息是顺序处理的，本来不用考虑共享数据）。
 
-7.7.3.  采用不可变消息
+### 7.7.3.  采用不可变消息
 
 Scala的actor模型让每个actor的act方法内部接近于单线程环境，你不用当心act方法里面的操作是否线程安全。在act方法中你可以尽情使用非同步、可变对象，因为每个act方法被有效限制在单个线程中，这也是actor模型被称为“share-nothing” 模型（零共享模型）的原因，其数据的作用范围被限制在单个线程中。不过一旦对象内的数据被用于多个actor之间进行消息传递。这时你就必须考虑消息对象是否线程安全。
 
@@ -260,7 +259,7 @@ Scala的actor模型让每个actor的act方法内部接近于单线程环境，�
 
 总结：大部分时候使用不可变对象很方便，不可变对象是并行系统的曙光，它们是易使用、低风险的线程安全对象。当你将来要设计一个和并行相关的程序时，无论是否使用actor，都应该尽量使用不可变的数据结构。
 
-7.7.4.  让消息自说明
+### 7.7.4.  让消息自说明
 
 对每一种消息创建一个对应的case class，而不是使用上面的tuple数据结构。虽然这种包装在很多情况下并非必须，但该做法能使actor程序易于理解，例如：
 
@@ -275,7 +274,7 @@ case class LookupIP(hostname: String, requester: Actor)
 lookerUpper ! LookupIP("www.scala-lang.org", self)
 
 
-7.8.     不同jvm间的消息访问
+### 7.8.     不同jvm间的消息访问
 
 服务器端：
 
@@ -360,7 +359,7 @@ object ActorClient extends Application {
 }
 ```
 
-7.9.     STM
+### 7.9.     STM
 
 http://nbronson.github.com/scala-stm/
 
