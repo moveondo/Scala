@@ -22,7 +22,7 @@
     1.8.  开发社区
 
 
-[2.    lang](https://github.com/moveondo/Scala/blob/master/Lang.md) 
+[2. Lang](https://github.com/moveondo/Scala/blob/master/Lang.md) 
 
 
     2.1.   和Java的异同
@@ -86,7 +86,7 @@
     4.3. 协变和逆变(co-|contra-)variance
 
 
-[5.  util包](https://github.com/moveondo/Scala/blob/master/Util.md) 
+[5.  Util包](https://github.com/moveondo/Scala/blob/master/Util.md) 
 
 
     5.1.  架构
@@ -102,14 +102,14 @@
     5.6.  Paralllel collection
 
 
-[6.io](https://github.com/moveondo/Scala/blob/master/IO.md) 
+[6.IO](https://github.com/moveondo/Scala/blob/master/IO.md) 
 
 
     6.1. 文件I/O
     
     6.2.  网络I/O
 
-[7.  actor](https://github.com/moveondo/Scala/blob/master/actor.md) 
+[7.  Actor](https://github.com/moveondo/Scala/blob/master/actor.md) 
 
 
     7.1. actor模型
@@ -130,7 +130,7 @@
     
     7.9. STM
 
-[8. misc](https://github.com/moveondo/Scala/blob/master/misc.md) 
+[8. Misc](https://github.com/moveondo/Scala/blob/master/misc.md) 
 
     8.1. xml
     
