@@ -1,7 +1,7 @@
-5.   util包
+### 5.   util包
 
 
-5.1.     架构
+### 5.1.     架构
 
 http://www.scala-lang.org/docu/files/collections-api/collections.html
 
@@ -20,7 +20,7 @@ scala.collection.mutable
 
  
 
-5.2.     集合Array,List,Tuple
+### 5.2.     集合Array,List,Tuple
 
 
 ![](https://github.com/moveondo/Scala/blob/master/image/54.jpg)
@@ -31,9 +31,9 @@ Scala 2.8中，3者的元素都可以混合不同的类型（转化为Any类型�
 
 Scala 2.7中，Array、List都不能混合类型，只有Tuple可以；
 
-5.2.1.  定义和初始化
+### 5.2.1.  定义和初始化
 
-5.2.1.1     Array
+### 5.2.1.1     Array
 
 val list1 = new Array[String](0) // Array()
 
@@ -157,7 +157,7 @@ lb.clear // ListBuffer()
 
  
 
-5.2.1.3     Vector
+### 5.2.1.3     Vector
 
 Scala2.8为了提高list的随机存取效率而引入的新集合类型（而list存取前部的元素快，越往后越慢）。
 
@@ -179,7 +179,7 @@ IndexSeq(1,2,3) // Vector(1, 2, 3)
 
  
 
-5.2.1.4     Tuple
+### 5.2.1.4     Tuple
 
 val t1 = ("a","b","c")
 
@@ -195,7 +195,7 @@ val (a,b,c) = (2,4,6)
 
 (1, "hello world")
 
-5.2.1.5     Range
+### 5.2.1.5     Range
 
 Range(0, 5) // (0,1,2,3,4)
 
@@ -224,7 +224,7 @@ List(1 to 5:_*)
 
 Vector(1 to 5: _*) // Vector(1,2,3,4,5)
 
-5.2.1.6     Stream
+### 5.2.1.6     Stream
 
 Stream相当于lazy List，避免在中间过程中生成不必要的集合。
 
@@ -262,7 +262,7 @@ Stream.range(1,50000000).filter(_%13==0)(1) // 26，很快，只计算最终结�
 
 (1 to 100).toStream.map(i=> i*3+7).filter(i=> (i%10)==0).sum 
 
-5.2.1.7     Stack Queue
+### 5.2.1.7     Stack Queue
 
 先进后出的堆栈：
 
@@ -307,9 +307,9 @@ mq dequeue // 1, mq= Queue(3, 5, 7, 9)
 
 mq clear // Queue()
 
-5.2.2.  使用(map, flatMap, filter, exists等)
+### 5.2.2.  使用(map, flatMap, filter, exists等)
 
-5.2.2.1     map
+### 5.2.2.1     map
 
 // 类型可以混合：
 
@@ -324,7 +324,7 @@ List("a","b","c").map(_.toUpperCase())     // 方式2, 类似于Groovy的it
 
 // = List(A, B, C)
 
-5.2.2.2     filter filterNot
+### 5.2.2.2     filter filterNot
 
 List(1,2,3,4,5).filter(_%2==0) // List(2, 4)
 
@@ -335,7 +335,7 @@ for (x<-List(1,2,3,4,5) if x%2==0) yield x
 
 List(1,2,3,4,5).filterNot(_%2==0) // List(1, 3, 5)
 
-5.2.2.3     partition span splitAt groupBy
+### 5.2.2.3     partition span splitAt groupBy
 
 注：val (a,b) = List(1,2,3,4,5).partition(_%2==0) // (List(2,4), List(1,3,5))
 
@@ -353,7 +353,7 @@ List(1,3,5,7,9) splitAt 2 // (List(1, 3),List(5, 7, 9))
 
 List(1,3,5,7,9) groupBy (5<) // Map((true,List(7, 9)), (false,List(1, 3, 5)))
 
-5.2.2.4     foreach
+### 5.2.2.4     foreach
 
 打印：
 
@@ -362,7 +362,7 @@ Array("a","b","c","d").foreach(printf("[%s].",_))
 // [a].[b].[c].[d].
 
 
-5.2.2.5     exists
+### 5.2.2.5     exists
 
 // 集合中是否存在符合条件的元素
 
@@ -370,7 +370,7 @@ List(1,2,3,4,5).exists(_%3==0) // true
 
  
 
-5.2.2.6     find
+### 5.2.2.6     find
 
 返回序列中符合条件的第一个。
 
@@ -378,7 +378,7 @@ List(1,2,3,4,5).exists(_%3==0) // true
 
 def fac1(n:Int) = if (n>= -1 && n<=1) n else (2 to n.abs) find (n%_==0) get
 
-5.2.2.7     sorted sortWith sortBy
+### 5.2.2.7     sorted sortWith sortBy
 
 例子（排序）：
 
@@ -391,7 +391,7 @@ List("abc", "cb", "defe", "z").sortBy(_.size) // List(z, cb, abc, defe)
 List((1,'c'), (1,'b'), (2,'a')) .sortBy(_._2) // List((2,a), (1,b), (1,c))
 
 
-5.2.2.8     distinct
+### 5.2.2.8     distinct
 
 例子：（去除List中的重复元素）
 
@@ -400,7 +400,7 @@ def uniq[T](l:List[T]) = l.distinct
 uniq(List(1,2,3,2,1)) // List(1,2,3)
 
 
-5.2.2.9     flatMap
+### 5.2.2.9     flatMap
 
 flatMap的作用：把多层次的数据结构“平面化”，并去除空元素（如None）。
 
@@ -449,7 +449,7 @@ List("123", "12a", "45") flatMap toint // List(123, 45)
 
 List("123", "12a", "45") map toint // List(Some(123), None, Some(45))
 
-5.2.2.10   indices，zipWithIndex
+### 5.2.2.10   indices，zipWithIndex
 
 得到indices：
 
@@ -467,13 +467,13 @@ a zipWithIndex // ((100,0), (200,1), (300,2))
 List(100,200,300,400,500) slice (2,4) // (300,400), 取l(2), l(3)
 
  
-5.2.2.11   take drop splitAt
+### 5.2.2.11   take drop splitAt
 
 List(1,3,5,7) take 2 // List(1,3)
 
 List(1,3,5,7) drop 2 // List(5,7)
 
-5.2.2.12   count
+### 5.2.2.12   count
 
 满足条件的元素数目：
 
@@ -484,7 +484,7 @@ def prime(n:Int) = if (n<2) false else 2 to math.sqrt(n).toInt forall (n%_!=0)
 1 to 1000 count prime  // 168
 
  
-5.2.2.13   updated patch
+### 5.2.2.13   updated patch
 
 对于immutable的数据结构，使用updated返回一个新的copy：
 
@@ -524,7 +524,7 @@ reverseMap就是revese + map
 
  
 
-5.2.2.15   contains startsWith endWith
+### 5.2.2.15   contains startsWith endWith
 
   1 to 5 contains 3 // true, 后一个参数是1个元素
 
@@ -537,7 +537,7 @@ reverseMap就是revese + map
 (List(1,2,3) corresponds List(4,5,6)) (_<_) // true，长度相同且每个对应项符合判断条件
 
 
-5.2.2.16   集合运算
+### 5.2.2.16   集合运算
 
 List(1,2,3,4) intersect List(4,3,6) // 交集 = List(3, 4)
 
@@ -549,9 +549,8 @@ List(1,2,3,4) union List(4,3,6) // A+B = List(1, 2, 3, 4, 4, 3, 6)
 
 List(1,2,3,4) ++ List(4,3,6) // A+B = List(1, 2, 3, 4, 4, 3, 6)
 
- 
 
-5.2.2.17   殊途同归
+### 5.2.2.17   殊途同归
 
 例子：得到 (4, 16, 36, 64, 100)
 
@@ -569,7 +568,7 @@ for(x<-1 to 10 if x%2==0) yield x*x
 
  
 
-5.2.2.18   其他
+### 5.2.2.18   其他
 
 对其他语言去重感兴趣，可看看：
 
@@ -577,7 +576,7 @@ http://rosettacode.org/wiki/Remove_duplicate_elements
 
  
 
-5.2.3.  数组元素定位
+### 5.2.3.  数组元素定位
 
 统一使用()，而不是[]，()就是apply()的简写，a(i)===a.apply(i)
 
@@ -601,7 +600,7 @@ val list = List("a","b","c")
 val t1 = ("a","b","c") // t1._1="a", t1._2="b", t1._3="c"
 
 
-5.2.4.  view
+### 5.2.4.  view
 
 在某类型的集合对象上调用view方法，得到相同类型的集合，但所有的transform函数都是lazy的，从该view返回调用force方法。
 
@@ -630,7 +629,7 @@ v map (x=>2*(1+x))
 
 Stream.range(1,1000000000).take(3).force //  Stream(1, 2, 3)
 
-5.2.5.  和Java集合间的转换（scalaj）
+### 5.2.5.  和Java集合间的转换（scalaj）
 
 方案一：Java的List<T>很容易通过List.toArray转换到Array，和Scala中的Array是等价的，可使用map、filter等。
 
@@ -682,9 +681,9 @@ scalaj的简易文档如下：
 
  
 
-5.3.     Map
+### 5.3.     Map
 
-5.3.1.  定义Map
+### 5.3.1.  定义Map
 
 var m = Map[Int, Int]()
 
@@ -705,7 +704,7 @@ List(1,2,3).zip(List(100,200,300)).toMap // Map((1,100), (2,200), (3,300))
 
 注解：zip有“拉拉链”的意思，就是把两排链扣完全对应扣合在一起，非常形象。
 
-5.3.2.  不可变Map(缺省)
+### 5.3.2.  不可变Map(缺省)
 
 *  定义：
 
@@ -771,7 +770,7 @@ Map(1->100,2->200) ++ Map(3->300) // Map((1,100), (2,200), (3,300))
 
  
 
-5.3.3.  可变Map
+### 5.3.3.  可变Map
 
 val map = scala.collection.mutable.Map[String, Any]()
 
@@ -817,15 +816,14 @@ mm transform ((x,y)=> x*10) // Map((2,20), (1,10), (3,30))
 
 mm transform ((x,y)=> y+3) // Map((2,23), (1,13), (3,33))
 
- 
 
-5.3.4.  Java的HashMap
+### 5.3.4.  Java的HashMap
 
 使用Java的HashMap：
 
 val m1:java.util.Map[Int, String] = new java.util.HashMap
 
-5.3.5.  读取所有元素
+### 5.3.5.  读取所有元素
 
 上面说过，Map(1->100,2->200,3->300) 和 Map((1,100),(2,200),(3,300))的写法是一样的，可见Map中的每一个entry都是一个Tuple，所以：
 
@@ -859,7 +857,7 @@ map.values.toList
 
 2 to 100 flatMap map.get // (200,300) 只有key=2，3有值
 
-5.3.6.  多值Map
+### 5.3.6.  多值Map
 
 结合Map和Tuple，很容易实现一个key对应的value是组合值的数据结构：
 
@@ -869,15 +867,14 @@ m(2)._1 // "qh"
 
 m(2)._2 // 30
 
- 
 
 for( (k,(v1,v2)) <- m ) printf("%d: (%s,%d)\n", k, v1, v2)
 
-5.4.     Set
+### 5.4.     Set
 
 注：BitSet（collection.immutable.BitSet）和Set类似，但操作更快
 
-5.4.1.  定义
+### 5.4.1.  定义
 
 var s = Set(1,2,3,4,5) // scala.collection.immutable.Set
 
@@ -913,7 +910,7 @@ Set(1,2,3) -- Set(2,3,4) // Set(1)
 
  
 
-5.4.2.  逻辑运算
+### 5.4.2.  逻辑运算
 
 运算
 
@@ -939,7 +936,7 @@ Set(1,2,3) diff Set(2  ,3,4) // Set(1)
 
  
 
-5.4.3.  可变BitSet
+### 5.4.3.  可变BitSet
 
 val bs = collection.mutable.BitSet()
 
@@ -951,7 +948,7 @@ bs.clear // BitSet()
 
  
 
-5.5.     Iterator
+### 5.5.     Iterator
 
 Iterator不属于集合类型，只是逐个存取集合中元素的方法：
 
@@ -961,7 +958,6 @@ it foreach println // 1 3 5 7
 
 it foreach println // 无输出
 
- 
 
 三种常用的使用模式：
 
@@ -979,7 +975,6 @@ for(e<- Iterator(1,3,5,7)) println(e)
 
 Iterator(1,3,5,7) foreach println
 
- 
 
 Iterator也可以使用map的方法：
 
@@ -1007,7 +1002,8 @@ b toList // List(1,3,5,7)
 
 // 此时it也不可用了
 
-5.6.     Paralllel collection
+### 5.6.     Paralllel collection
+
 Scala 2.9+引入：
 
 (1 to 10).par foreach println
