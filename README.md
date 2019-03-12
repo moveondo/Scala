@@ -143,7 +143,7 @@
     8.5. GUI
 
 
-[9. 附录](https://github.com/moveondo/Scala/blob/master/%E9%99%84%E5%BD%95.mdd) 
+[9. 附录](https://github.com/moveondo/Scala/blob/master/%E9%99%84%E5%BD%95.md) 
 
 
     9.1.  stackoverflow的scala教程
