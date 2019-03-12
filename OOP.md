@@ -1,8 +1,8 @@
 ### 4.   OOP
 
-#### 4.1.     类class
+### 4.1.     类class
 
-#### 4.1.1.  定义
+### 4.1.1.  定义
 
 例子1：
 
@@ -65,7 +65,7 @@ class Person(ln : String, fn : String, s : Person = null) {
 
 new Person("aa","bb", new Person("cc","dd")).introduction();
 
-4.1.2.  构造方法
+### 4.1.2.  构造方法
 
 class c1(x:String) // 等同于：class c1(private var x:String)
 
@@ -113,7 +113,7 @@ class c2(name:String, age:Int, female:Boolean=false)
 }
 
 
-4.1.3.  override
+### 4.1.3.  override
 
 不同于Java的使用 @Override，或者直接使用相同名字覆盖父类方法。
 
@@ -121,7 +121,7 @@ class c2(name:String, age:Int, female:Boolean=false)
 
 如果是覆盖抽象方法，可以不用overriade关键字。
 
-4.1.4.  object单例对象
+### 4.1.4.  object单例对象
 
 如：
 
@@ -144,6 +144,7 @@ return new User(name)
 ```
 
 Scala
+
 ```
 object User {    
 
@@ -162,7 +163,7 @@ val u = User("qh") // "name: qh"
 ```
 
 
-4.1.5.  静态方法
+### 4.1.5.  静态方法
 
 Scala没有静态方法，类似静态方法的函数定义在object中：
 
@@ -204,7 +205,7 @@ object ImportMain {
 
 }
 
-4.1.6.  case class(条件类)
+### 4.1.6.  case class(条件类)
 
 例如：
 
@@ -320,7 +321,7 @@ items=item("high","Clean the house")::
 
  
 
-4.1.7.  case object(条件单例对象)
+### 4.1.7.  case object(条件单例对象)
 
 比如定义一个标识类（而不是字符串）：
 
@@ -330,7 +331,7 @@ case object Stop
 
  
 
-4.1.8.  枚举
+### 4.1.8.  枚举
 
 Java中：
 
@@ -349,7 +350,7 @@ case object Cherry extends Fruits
 也可以是 case class
 
 
-4.1.9.  属性和Bean
+### 4.1.9.  属性和Bean
 
 例子1（直接定义和使用属性）：
 
@@ -390,7 +391,7 @@ o2.setName("james") // 增加了set/get方法
 
 o2.getName() // "james"
 
-4.1.10.      反射
+### 4.1.10.      反射
 
 Scala没有太特别的反射机制，使用java的即可，不过Scala在match..case中可以匹配类型：
 
@@ -413,7 +414,7 @@ classOf[String] // 相当于java中的String.class
 
 "aaa".asInstanceOf[String]
 
-4.2.     trait超级接口
+### 4.2.  trait超级接口
 
 注：trait  [treit] n.特征，特点，特性
 
@@ -497,12 +498,9 @@ val m2$ = new Man2("james") with Dad // 动态mixin
 m2$.add(new Child)
 
  
+### 4.3.     协变和逆变(co-|contra-)variance
 
- 
-
-4.3.     协变和逆变(co-|contra-)variance
-
-4.3.1.  概念
+### 4.3.1.  概念
 
 使用“+”“-”差异标记
 
@@ -517,15 +515,11 @@ Function[A, B]和Function[-A, +B]的区别图示：
 +B是B的超集，叫协变
 
 
-4.3.2.  类型上下界
+### 4.3.2.  类型上下界
  
-
 ![](https://github.com/moveondo/Scala/blob/master/image/13.jpg)
 
-
- 
-
-4.3.3.  协变、逆变结合上下界
+### 4.3.3.  协变、逆变结合上下界
 
 例子1：
 ![](https://github.com/moveondo/Scala/blob/master/image/14.jpg)
